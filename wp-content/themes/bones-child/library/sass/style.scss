@@ -108,7 +108,27 @@
 				padding: 80px;
 			}
 		}
+		
 	} // END #main
+	// this halfs front page posts with
+	// images of half-post attr
+	.home {  
+		#main {
+			&.category-text-img {
+			border-bottom: $botttomBorder;
+				.entry-content, .thumb-img {
+					width: 50%;
+					float: left;
+				}
+			}
+			&.category-text-half {
+					width: 50%;
+					display: inline-block;
+					margin-right: -4px;
+			}
+		}
+	}
+	
 
 } // END desktops
 
