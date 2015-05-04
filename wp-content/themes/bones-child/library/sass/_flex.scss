@@ -1,0 +1,59 @@
+// http://codepen.io/jreid/pen/jCrBv
+// https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+/* @mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;     
+  -webkit-order: $val;  
+  order: $val;
+} */
+
+// VERTICAL alignment options
+/* @mixin align-items($val) { // flex-start | flex-end | center | baseline | stretch
+  -webkit-box-align: center; 
+  -moz-box-align: center; 
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+} */
+
+// HORIZONTAL alignment options 
+/* @mixin justify-content($val) { // flex-start | flex-end | center | space-between | space-around;
+  -webkit-box-pack: center; 
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+} */
+
+// EXAMPLE
+// .wrapper {
+//   @include flexbox();
+// }
+
+// .item {
+//   @include flex(0 1 auto);
+//   @include order(1);
+//   background: pink;
+//   height:150px;
+//   margin:10px;
+//   padding:25px;
+//   text-align: center;
+// }

@@ -1,0 +1,118 @@
+/* 
+
+Grid system: 1 col = 80px
+Default   =   4 cols / 25% per col
+Min 640px =   8 cols / 12.5% per col
+Min 960px =  12 cols / 80px per col
+
+ */
+
+/*default size, mobile first*/
+
+	$col:25%;
+
+	.m-1 {
+		width:$col;
+	}
+
+	.m-2 {
+		width:$col*2;
+	}
+
+	.m-3 {
+		width:$col*3;
+	}
+
+	.m-4 {
+		width:$col*4;
+	}
+
+// end default / mobile
+
+@media (min-width: 640px) {
+	$col:12.5%;
+
+	.t-1 {
+		width:$col;
+	}
+
+	.t-2 {
+		width:$col*2;
+	}
+
+	.t-3 {
+		width:$col*3;
+	}
+
+	.t-4 {
+		width:$col*4;
+	}
+
+	.t-5 {
+		width:$col*5;
+	}
+
+	.t-6 {
+		width:$col*6;
+	}
+
+	.t-7 {
+		width:$col*7;
+	}
+
+	.t-8 {
+		width:$col*8;
+	}
+} // end tablet
+
+@media (min-width: 980px) {
+	$col:80px;
+	
+	.d-1 {
+		width:$col;
+	}
+
+	.d-2 {
+		width:$col*2;
+	}
+
+	.d-3 {
+		width:$col*3;
+	}
+
+	.d-4 {
+		width:$col*4;
+	}
+
+	.d-5 {
+		width:$col*5;
+	}
+
+	.d-6 {
+		width:$col*6;
+	}
+
+	.d-7 {
+		width:$col*7;
+	}
+
+	.d-8 {
+		width:$col*8;
+	}
+
+	.d-9 {
+		width:$col*9;
+	}
+
+	.d-10 {
+		width:$col*10;
+	}
+
+	.d-11 {
+		width:$col*11;
+	}
+
+	.d-12 {
+		width:$col*12;
+	}
+}
