@@ -27,11 +27,13 @@
 						
 						<main id="main" class="m-4 t-8 d-12 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-							<section class="hero-text m-4 t-8 d-12">
-								<div class="brief col-xs-12 col-sm-5">I am a front-end developer focused on HTML5, CSS3, JAVASCRIPT and JQUERY</div>
-								<div class="introduction col-xs-12 col-sm-7">
-									Thank you for viewing my portfolio! I love producing easy to use, standards-compliant web sites and strive to remain up-to date with emerging features and techniques. I am currently seeking a role that will utilise and further develop my skills. 
-								</div>
+							<section class="hero-text">
+								<div class="row">
+									<div class="brief col-xs-12 col-sm-5">I am a front-end developer focused on HTML5, CSS3, JAVASCRIPT and JQUERY</div>
+									<div class="introduction col-xs-12 col-sm-7">
+										Thank you for viewing my portfolio! I love producing easy to use, standards-compliant web sites and strive to remain up-to date with emerging features and techniques. I am currently seeking a role that will utilise and further develop my skills. 
+									</div>
+								</div>	
 							</section>
 							
 							<?php 	/* some php in functions.php is only letting categories with id 10 (front-page) through the loop*/
@@ -58,56 +60,56 @@
 
 
 								</header>
-
-								<section class="entry-content cf" itemprop="articleBody">
+								<div class="cf">
+									<section class="entry-content cf" itemprop="articleBody">
+										
+										<?php 	
+											// the content (pretty self explanatory huh)
+											echo "<div class=\"post-text\">";
+											the_content();
+											echo "</div>";
+										?>
+										
 									
-									<?php 	
-										// the content (pretty self explanatory huh)
-										echo "<div class=\"post-text\">";
-										the_content();
-										echo "</div>";
+									
+										<?php		
+											/*
+											 * Link Pages is used in case you have posts that are set to break into
+											 * multiple pages. You can remove this if you don't plan on doing that.
+											 *
+											 * Also, breaking content up into multiple pages is a horrible experience,
+											 * so don't do it. While there are SOME edge cases where this is useful, it's
+											 * mostly used for people to get more ad views. It's up to you but if you want
+											 * to do it, you're wrong and I hate you. (Ok, I still love you but just not as much)
+											 *
+											 * http://gizmodo.com/5841121/google-wants-to-help-you-avoid-stupid-annoying-multiple-page-articles
+											 *
+											*/
+											wp_link_pages( array(
+												'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bonestheme' ) . '</span>',
+												'after'       => '</div>',
+												'link_before' => '<span>',
+												'link_after'  => '</span>',
+											) );
+										?>
+									</section>
+									
+									<!-- using thumbnails to add an img, can use functions.php to do crops etc, 
+											 use conditinals to only download size appropriate for screen size -->
+										
+									<?php
+										// http://codex.wordpress.org/Post_Thumbnails
+										if ( has_post_thumbnail() ) {
+											echo "<div class=\"thumb-img\">";
+											echo "<a href=\"";
+											the_permalink();
+											echo "\">";
+											the_post_thumbnail('full');
+											echo "</a>";
+											echo "</div>";
+										} 
 									?>
-									
-								
-								
-									<?php		
-										/*
-										 * Link Pages is used in case you have posts that are set to break into
-										 * multiple pages. You can remove this if you don't plan on doing that.
-										 *
-										 * Also, breaking content up into multiple pages is a horrible experience,
-										 * so don't do it. While there are SOME edge cases where this is useful, it's
-										 * mostly used for people to get more ad views. It's up to you but if you want
-										 * to do it, you're wrong and I hate you. (Ok, I still love you but just not as much)
-										 *
-										 * http://gizmodo.com/5841121/google-wants-to-help-you-avoid-stupid-annoying-multiple-page-articles
-										 *
-										*/
-										wp_link_pages( array(
-											'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bonestheme' ) . '</span>',
-											'after'       => '</div>',
-											'link_before' => '<span>',
-											'link_after'  => '</span>',
-										) );
-									?>
-								</section>
-								
-								<!-- using thumbnails to add an img, can use functions.php to do crops etc, 
-										 use conditinals to only download size appropriate for screen size -->
-									
-								<?php
-									// http://codex.wordpress.org/Post_Thumbnails
-									if ( has_post_thumbnail() ) {
-										echo "<div class=\"thumb-img\">";
-										echo "<a href=\"";
-										the_permalink();
-										echo "\">";
-										the_post_thumbnail('full');
-										echo "</a>";
-										echo "</div>";
-									} 
-								?>
-
+							</div>
 								<footer class="article-footer">
 
 									<?php printf( '<p class="footer-category">' . __('filed under', 'bonestheme' ) . ': %1$s</p>' , get_the_category_list(', ') ); ?>
