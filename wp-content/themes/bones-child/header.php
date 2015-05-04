@@ -53,9 +53,11 @@
 					<!-- my custom nav -->
 
 					<nav>
-						<div class="contact phone-no m-4 t-4 d-5"><a href="tel:07800821737">07800821737</a></div>
-						<div class="contact email-link m-4 t-4 d-5"><a href="mailto:faotms@gmail.com">faotms@gmail.com</a></div>
-						<a class="not-contact" href="<?php echo home_url(); ?>" rel="nofollow"><div class="tms-home-link m-4 t-8 d-2">TMS</div></a>
+						<div class="contact phone-no col-xs-12 col-sm-6 col-md-5"><a href="tel:07800821737">07800821737</a></div>
+						<div class="contact email-link col-xs-12 col-sm-6 col-md-5 col-md-push-2"><a href="mailto:faotms@gmail.com">faotms@gmail.com</a></div>
+						<a class="not-contact" href="<?php echo home_url(); ?>" rel="nofollow">
+							<div class="tms-home-link col-xs-12 col-sm-12 col-md-2 col-md-pull-5">TMS</div>
+						</a>
 					</nav>
 					
 					<!-- header woz here -->

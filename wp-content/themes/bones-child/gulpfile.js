@@ -35,7 +35,7 @@ gulp.task('sass', function () {
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch('./library/sass/style.scss', ['sass']);
+    gulp.watch('./library/sass/*.scss', ['sass']);
 });
 
 // Default Task

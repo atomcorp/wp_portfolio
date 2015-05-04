@@ -28,8 +28,8 @@
 						<main id="main" class="m-4 t-8 d-12 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<section class="hero-text m-4 t-8 d-12">
-								<div class="brief m-4 t-3 d-4">I am a front-end developer focused on HTML5, CSS3, JAVASCRIPT and JQUERY</div>
-								<div class="introduction m-4 t-5 d-8">
+								<div class="brief col-xs-12 col-sm-5">I am a front-end developer focused on HTML5, CSS3, JAVASCRIPT and JQUERY</div>
+								<div class="introduction col-xs-12 col-sm-7">
 									Thank you for viewing my portfolio! I love producing easy to use, standards-compliant web sites and strive to remain up-to date with emerging features and techniques. I am currently seeking a role that will utilise and further develop my skills. 
 								</div>
 							</section>
@@ -41,7 +41,7 @@
 							<!-- start of posts -->
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf m-4 t-8 d-12' ); ?>role="article" itemscope itemtype="http://schema.org/BlogPosting">
 							
 
 								<header class="article-header">
