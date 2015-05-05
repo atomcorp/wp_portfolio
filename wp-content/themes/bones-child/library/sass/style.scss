@@ -70,6 +70,11 @@
 	
 	
 	#main {
+		article {
+			.thumb-img {
+				padding: 40px;
+			}
+		}
 		.hero-text {
 			position: relative;
 			.brief {
@@ -84,8 +89,29 @@
 
  	} // end #main
 
-
 } // END tablet
+
+@media (min-width: 740px) {
+	.home {  
+		#main {
+			article {
+					&.category-text-img {
+					border-bottom: $botttomBorder;
+						.entry-content, .thumb-img {
+							width: 50%;
+							float: left;
+						}
+					}
+					&.category-text-half {
+							width: 50%;
+							display: inline-block;
+							margin-right: -4px;
+							vertical-align: top;
+					}
+			}
+		}		
+	}
+}
 	
 
 // START desktop
@@ -114,19 +140,21 @@
 	// images of half-post attr
 	.home {  
 		#main {
-			&.category-text-img {
-			border-bottom: $botttomBorder;
-				.entry-content, .thumb-img {
-					width: 50%;
-					float: left;
+			article {
+					&.category-text-img {
+					border-bottom: $botttomBorder;
+						.entry-content, .thumb-img {
+							width: 50%;
+							float: left;
+						}
+					}
+					&.category-text-half {
+						width: 50%;
+						display: inline-block;
+						margin-right: -4px;
 				}
 			}
-			&.category-text-half {
-					width: 50%;
-					display: inline-block;
-					margin-right: -4px;
-			}
-		}
+		}		
 	}
 	
 

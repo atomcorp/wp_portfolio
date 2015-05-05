@@ -108,5 +108,68 @@ jQuery(document).ready(function($) {
 
   // END replace logo TMSP text with post-title text
 
+  
+  /*
+     // join up uneven heighted divs
+  */
+
+  function evenHeights(a,b) {
+    if (a.height() < b.height()) {
+      a.height(b.height());
+    } else if (b.height() < a.height()){
+      b.height(a.height());
+    }
+  }
+
+  function resetHeights(a,b) {
+    a.css('height','');
+    b.css('height','');
+  }
+
+  var $brief = $('.brief');
+  var $intro = $('.introduction');
+  var $halfText = $('.category-text-half');
+  console.log($brief.height());
+  var halftextArray = [];
+
+  $.each($halfText, function(index, val) {
+     $this = $(this);
+     halftextArray.push($this);
+  }); 
+
+  $(window).load(function() {
+    if ($(window).width() > 739) {
+      evenHeights($brief,$intro);
+      evenHeights(halftextArray[0],halftextArray[1]);
+      evenHeights(halftextArray[2],halftextArray[3]);
+    }  
+  });
+
+  // http://stackoverflow.com/questions/20990712/jquery-window-resize-equivalent-event-listener-that-only-fires-on-a-speci
+  var width = 0;
+
+  $(window).load(function(){
+     width = $(window).width();
+
+  });
+
+  $(window).resize(function(){
+    if (width > 739) {
+      if(width != $(window).width()){
+        evenHeights($brief,$intro);
+        evenHeights(halftextArray[0],halftextArray[1]);
+        evenHeights(halftextArray[2],halftextArray[3]);
+        width = $(window).width();
+      }
+    } else if (width < 739) {
+      resetHeights($brief,$intro);
+      resetHeights(halftextArray[0],halftextArray[1]);
+      resetHeights(halftextArray[2],halftextArray[3]);
+      width = $(window).width();
+    }
+  });
+
+  
+
 
 }); /* end of as page load scripts */
